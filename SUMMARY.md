@@ -13,4 +13,5 @@
 * [5. Generics Function Pointers](5.-generics-function-pointers.md)
 * [6. Float](6.-float.md)
 * [7. Intro to RISC-V](7.-intro-to-risc-v.md)
-* [10. RISC-V and Assembly](10.-risc-v-and-assembly.md)
+* [10. RISC-V Assembly](10.-risc-v-assembly.md)
+* [11. RV32 Machine Language](11.-rv32-machine-language.md)
