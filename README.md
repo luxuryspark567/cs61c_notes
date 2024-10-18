@@ -24,3 +24,6 @@
 | Esc `:tabn`            | Go to the next tab in the tab bar                                                                                                       |
 | Esc `:tabp`            | Go to the previous tab in the tab bar                                                                                                   |
 
+## 5， WSL复制文件
+
+sudo cp /mnt/c/Users/Robert/Documents/GitHub/CS61C/fa22-lab-starter/tools/logisim-evolution.jar ./
