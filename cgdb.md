@@ -16,7 +16,7 @@ cgdb pwd_checker
 
 **3, start debuging**
 
-"r"
+"start"
 
 **4, switch to code**
 
@@ -25,6 +25,10 @@ cgdb pwd_checker
 **5, switch CML**
 
 "i"
+
+6, exit
+
+"q"
 
 ## Tips
 
