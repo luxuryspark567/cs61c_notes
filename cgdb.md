@@ -1,5 +1,12 @@
 # CGDB
 
+## Debug
+
+```bash
+gcc -g -o pwd_checker test_pwd_checker.c pwd_checker.c
+cgdb pwd_checker
+```
+
 ## Tips
 
 ### How do I switch between the code window and the console? <a href="#how-do-i-switch-between-the-code-window-and-the-console" id="how-do-i-switch-between-the-code-window-and-the-console"></a>
