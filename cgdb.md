@@ -2,10 +2,29 @@
 
 ## Debug
 
-```bash
+**1, compile**
+
+```
 gcc -g -o pwd_checker test_pwd_checker.c pwd_checker.c
+```
+
+**2, start cgdb**
+
+```
 cgdb pwd_checker
 ```
+
+**3, start debuging**
+
+"r"
+
+**4, switch to code**
+
+"ESC"
+
+**5, switch CML**
+
+"i"
 
 ## Tips
 
