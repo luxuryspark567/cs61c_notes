@@ -14,6 +14,7 @@
 * [6. Float](6.-float.md)
 * [7. Intro to RISC-V](7.-intro-to-risc-v.md)
 * [10. RISC-V Assembly](10.-risc-v-assembly.md)
+* [什么时候使用a, s, t寄存器](shen-me-shi-hou-shi-yongastji-cun-qi.md)
 * [11. RV32 Machine Language](11.-rv32-machine-language.md)
 * [13. CALL(Compiling, Assembling, Linking, and Loading)](13.-call-compiling-assembling-linking-and-loading.md)
 * [14. SDS](14.-sds.md)
