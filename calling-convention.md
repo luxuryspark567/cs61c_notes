@@ -6,13 +6,13 @@ According to calling convention, when we call a function, that function promises
 
 (Reminder: The **caller** is the function making the call, and the **callee** is the function that is being called. **ALL functions have the ability to be a caller and a callee; we as programmers should never assume a function isn't something because we have no knowledge about where a function may or may not be called from. Functions that call other functions are always a caller, even if they're by default a callee.**)
 
-The registers that a function promises to leave unchanged are the **callee-saved registers** (preserved registers). `s0` through `s11` (saved registers) and `sp` are preserved registers.
+The registers that a function promises to leave unchanged are the <mark style="color:red;">**callee-saved registers**</mark> (preserved registers). <mark style="color:yellow;">`s0`</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">through</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">`s11`</mark> (saved registers) and <mark style="color:yellow;">`sp`</mark> are preserved registers.
 
-The registers that a function does not promise to leave unchanged are the **caller-saved registers** (non-preserved registers). `a0` through `a7` (argument registers), `t0` through `t6` (temporary registers), and `ra` (return address) are non-preserved registers.
+The registers that a function does not promise to leave unchanged are the <mark style="color:red;">**caller-saved registers**</mark> (non-preserved registers). <mark style="color:yellow;">`a0`</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">through</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">`a7`</mark> (argument registers), <mark style="color:yellow;">`t0`</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">through</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">`t6`</mark> (temporary registers), and <mark style="color:yellow;">`ra`</mark> (return address) are non-preserved registers.
 
 ### The caller perspective <a href="#the-caller-perspective" id="the-caller-perspective"></a>
 
-When we call a function, that function promises to not modify any of the preserved registers, from the perspective of the caller. This means that when the function returns, we can be sure that the preserved registers have not changed. This does **not** however, guarantee that function called will not modify preserved register values across the function call; it just guarantees that from the perspective of the caller, the preserved register values **appear** unchanged.
+When we call a function, that function promises to not modify any of the preserved registers, from the perspective of the caller. <mark style="color:red;">This means that when the function returns, we can be sure that the preserved registers have not changed.</mark> This does **not** however, guarantee that function called will not modify preserved register values across the function call; it just guarantees that from the perspective of the caller, the preserved register values **appear** unchanged.
 
 ```
 addi s0, x0, 5     # s0 contains 5
@@ -22,7 +22,7 @@ addi s0, s0, 0     # s0 still contains 5 here!
 
 However, that function is allowed to freely modify any of the non-preserved registers. This means that as soon as you call a function and the function returns, every non-preserved register now contains _garbage_. You do not know what values are in the non-preserved registers anymore.
 
-**NOTE: garbage refers to unknown values; even if the values in non-preserved registers remain unchanged across a function call.** This is because our guarantees don't say that non-preserved registers are untouched, so even if they aren't changed, we have to assume they are.
+**NOTE: **<mark style="color:red;">**garbage refers to unknown values; even if the values in non-preserved registers remain unchanged across a function call**</mark>**.** This is because our guarantees don't say that non-preserved registers are untouched, so even if they aren't changed, we have to assume they are.
 
 ```
 addi t0, x0, 5     # t0 contains 5
@@ -30,9 +30,9 @@ jal ra, func       # call a function
 addi t0, t0, 0     # t0 contains garbage!
 ```
 
-This is a common calling convention bug: **when a function returns, you cannot rely on the values in any non-preserved register.**
+This is a common calling convention bug: <mark style="color:red;">when a function returns, you cannot rely on the values in any non-preserved register.</mark>
 
-One way to avoid this bug is to save the values in the non-preserved registers on the stack before calling the function, then restore the values in the non-preserved registers after the function returns. For example:
+<mark style="color:red;">One way to avoid this bug is to save the values in the non-preserved registers on the stack before calling the function, then restore the values in the non-preserved registers after the function returns.</mark> For example:
 
 ```
 addi t0, x0, 5     # t0 contains 5
@@ -63,9 +63,9 @@ This is why the non-preserved registers are often called caller-saved registers,
 
 When we write a function, we are allowed to freely change any of the non-preserved registers. However, we must promise to not change any of the preserved registers, from the perspective of the caller.
 
-This is another common calling convention bug: **a function cannot noticably change any preserved registers**. In other words, change whatever you'd like, callee, just make sure you restore the preserved register values before returning back to the caller, and don't worry about the non-preserved registers.
+This is another common calling convention bug: <mark style="color:red;">a function cannot noticably change any preserved registers</mark>. In other words, <mark style="color:red;">change whatever you'd like, callee, just make sure you restore the preserved register values before returning back to the caller</mark>, and don't worry about the non-preserved registers.
 
-If we want to use one of the preserved registers during the function, we need to save the register values on the stack at the start of the function, then restore the values at the end of the function. For example:
+<mark style="color:red;">If we want to use one of the preserved registers during the function, we need to save the register values on the stack at the start of the function, then restore the values at the end of the function.</mark> For example:
 
 ```
 # Prologue
@@ -87,15 +87,19 @@ addi sp, sp, 12    # increment stack
 ret                # return from function
 ```
 
-Notice that we also saved the value of `ra` on the stack. Remember that the `ra` register stores the address that we'll jump back to after this function finishes executing. Saving the value of `ra` on the stack is necessary if we decide to call another function inside this function. If we make a function call at the "do stuff" comment, then that function call will overwrite `ra`, and we'll lose the address that we were supposed to jump back to.
+<mark style="color:red;">Notice that we also saved the value of</mark> <mark style="color:yellow;">`ra`</mark> <mark style="color:red;">on the stack</mark>. Remember that the `ra` register stores the address that we'll jump back to after this function finishes executing. <mark style="color:yellow;">Saving the value of</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">`ra`</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">on the stack is necessary if we decide to call another function inside this function.</mark> If we make a function call at the "do stuff" comment, then that function call will overwrite `ra`, and we'll lose the address that we were supposed to jump back to.
+
+{% hint style="warning" %}
+Should ra be preserved-register?
+{% endhint %}
 
 ### Coding advice <a href="#coding-advice" id="coding-advice"></a>
 
-When following calling convention, it's better to be safe than sorry! It doesn't hurt to save an extra register you didn't need to save, but it's very bad to forget to save a register that you were supposed to save. With that being said, don't save every register because it takes up more stack space than necessary and also muddles your code, because eventually it's unclear as to what registers are being actively used and which ones are just chilling.
+When following calling convention, <mark style="color:red;">it's better to be safe than sorry</mark>! It doesn't hurt to save an extra register you didn't need to save, but it's very bad to forget to save a register that you were supposed to save. With that being said, don't save every register because it takes up more stack space than necessary and also muddles your code, because eventually it's unclear as to what registers are being actively used and which ones are just chilling.
 
-* Always save the value of `ra` at the start of a function and restore it at the end of a function. Even though it looks like it's being saved in the callee-prologue and restored in the callee-epilogue as a caller-saved register, it's actually preemptively saving `ra` in case at any point a function is called, and guarantees the return address we want to return to is preserved, before doing anything else.
-* Save the values of all the preserved registers at the start of a function and restore them at the end of the function in the prologue and epilogue. If you choose not to save the value in one of the save registers, be absolutely sure that you aren't using that register in the function.
-* Save the values of the non-preserved registers that we rely on after a function is being called; in other words, only non-preserved registers values we rely on across a function call should be saved. Otherwise, they can be discarded. To do this, save them before calling a function and restore them after calling a function. You can do this by moving the temporary values by moving them to a free saved register, if any are available, or by saving them on the stack. If you choose not to save the value in one of the non-preserved registers, be absolutely sure that you do not rely on the value in that register after the function returns.
+* <mark style="color:red;">**Always**</mark> <mark style="color:red;"></mark><mark style="color:red;">save the value of</mark> <mark style="color:red;"></mark><mark style="color:red;">`ra`</mark> <mark style="color:red;"></mark><mark style="color:red;">at the start of a function and restore it at the end of a function.</mark> Even though it looks like it's being saved in the callee-prologue and restored in the callee-epilogue as a caller-saved register, it's actually preemptively saving `ra` in case at any point a function is called, and guarantees the return address we want to return to is preserved, before doing anything else.
+* <mark style="color:red;">Save the values of all the preserved registers at the start of a function and restore them at the end of the function in the prologue and epilogue.</mark> If you choose not to save the value in one of the save registers, be absolutely sure that you aren't using that register in the function.
+* <mark style="color:red;">Save the values of the non-preserved registers that we rely on after a function is being called</mark>; in other words, only non-preserved registers values we rely on across a function call should be saved. Otherwise, they can be discarded. To do this, save them before calling a function and restore them after calling a function. You can do this by moving the temporary values by moving them to a free saved register, if any are available, or by saving them on the stack. If you choose not to save the value in one of the non-preserved registers, be absolutely sure that you do not rely on the value in that register after the function returns.
 
 ### Debugging advice <a href="#debugging-advice" id="debugging-advice"></a>
 
@@ -112,7 +116,7 @@ To check that you're following calling convention for non-preserved registers:
 
 ### Randomizing non-preserved registers <a href="#randomizing-non-preserved-registers" id="randomizing-non-preserved-registers"></a>
 
-Remember that immediately after you call a function, you must assume that the non-preserved registers contain garbage. (This is because the function could have changed any of the non-preserved registers.)
+<mark style="color:red;">Remember that immediately after you call a function, you must assume that the non-preserved registers contain garbage</mark>. (This is because the function could have changed any of the non-preserved registers.)
 
 Sometimes your code is violating calling convention by using the garbage values in non-preserved registers after calling a function. However, your code might just happen to work correctly because you got lucky with the garbage values.
 
