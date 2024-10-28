@@ -19,4 +19,6 @@
 * [13. CALL(Compiling, Assembling, Linking, and Loading)](13.-call-compiling-assembling-linking-and-loading.md)
 * [Calling Convention](calling-convention.md)
 * [Neural Net](neural-net.md)
-* [14. SDS](14.-sds.md)
+* [14. Synchronous Digital Systems (SDS):](14.-synchronous-digital-systems-sds.md)
+* [15. Boolean](15.-boolean.md)
+* [16. State](16.-state.md)
