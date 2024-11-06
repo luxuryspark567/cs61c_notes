@@ -23,5 +23,5 @@
 * [15. Combinational Logic](15.-combinational-logic.md)
 * [16. State](16.-state.md)
 * [17. Combinational Logic Blocks](17.-combinational-logic-blocks.md)
-* [18. RISC-V Data Path](18.-risc-v-data-path.md)
+* [18. Arithmetic/Logical Datapath](18.-arithmetic-logical-datapath.md)
 * [Page](page.md)
