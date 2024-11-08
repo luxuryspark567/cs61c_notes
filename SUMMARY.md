@@ -22,6 +22,6 @@
 * [14. Synchronous Digital Systems (SDS):](14.-sds.md)
 * [15. Combinational Logic](15.-combinational-logic.md)
 * [16. State](16.-state.md)
-* [17. Combinational Logic Blocks](17.-combinational-logic-blocks.md)
+* [17. Combinatorial Logic Blocks](17.-combinatorial-logic-blocks.md)
 * [18. Arithmetic/Logical Datapath](18.-risc-v-data-path.md)
 * [19. RISC V Datapath II](19.-risc-v-datapath-ii.md)
