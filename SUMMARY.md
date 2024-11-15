@@ -25,3 +25,4 @@
 * [17. Combinatorial Logic Blocks](17.-combinatorial-logic-blocks.md)
 * [18. Arithmetic/Logical Datapath](18.-risc-v-data-path.md)
 * [19. RISC V Datapath II](19.-risc-v-datapath-ii.md)
+* [20. Datapath Control](20.-datapath-control.md)
