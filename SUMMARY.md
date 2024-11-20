@@ -26,4 +26,5 @@
 * [18. Arithmetic/Logical Datapath](18.-risc-v-data-path.md)
 * [19. RISC V Datapath II](19.-risc-v-datapath-ii.md)
 * [20. Datapath Control](20.-datapath-control.md)
-* [21. Pipeline](21.-pipeline.md)
+* [21. Pipeline1](21.-pipeline1.md)
+* [22. Pipeline2](22.-pipeline2.md)
