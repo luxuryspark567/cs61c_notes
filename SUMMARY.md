@@ -31,4 +31,5 @@
 * [23. Caches](23.-caches.md)
 * [24&25. Direct Mapped Caches](24-and-25.-direct-mapped-caches.md)
 * [26. Set-Associative Caches](26.-set-associative-caches.md)
-* [27. Parallellesm](27.-parallellesm.md)
+* [27. Parallelism](27.-parallelism.md)
+* [28. Thread Level Parallelism](28.-thread-level-parallelism.md)
