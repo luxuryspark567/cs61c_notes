@@ -28,3 +28,4 @@
 * [20. Datapath Control](20.-datapath-control.md)
 * [21. Pipeline1](21.-pipeline1.md)
 * [22. Pipeline2](22.-pipeline2.md)
+* [23. Caches](23.-caches.md)
