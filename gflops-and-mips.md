@@ -1,8 +1,8 @@
 # GFLOPS & MIPS
 
-* **Use GFLOPS** when evaluating systems that are heavily dependent on **floating-point operations**, like scientific computing, AI, or graphics.
-* **Use MIPS** for general-purpose processors, especially in embedded systems and microcontrollers that perform fixed-point or integer-heavy tasks.
-* **For fixed-point MCUs**, **MIPS** or other embedded-specific benchmarks (like **Dhrystone** or **CoreMark**) are more appropriate than GFLOPS.
+* <mark style="color:yellow;">**Use GFLOPS**</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">when evaluating systems that are heavily dependent on</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">**floating-point operations**</mark><mark style="color:yellow;">, like scientific computing, AI, or graphics</mark>.
+* <mark style="color:yellow;">**Use MIPS**</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">for general-purpose processors, especially in embedded systems and microcontrollers that perform fixed-point or integer-heavy tasks.</mark>
+* <mark style="color:yellow;">**For fixed-point MCUs**</mark><mark style="color:yellow;">,</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">**MIPS**</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">or other embedded-specific benchmarks</mark> (like <mark style="color:yellow;">**Dhrystone**</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">or</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">**CoreMark**</mark>) are more appropriate than GFLOPS.
 
 ## MIPS
 
