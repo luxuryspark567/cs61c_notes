@@ -32,4 +32,5 @@
 * [24&25. Direct Mapped Caches](24-and-25.-direct-mapped-caches.md)
 * [26. Set-Associative Caches](26.-set-associative-caches.md)
 * [27. Parallelism](27.-parallelism.md)
+* [GFLOPS & MIPS](gflops-and-mips.md)
 * [28. Thread Level Parallelism](28.-thread-level-parallelism.md)
