@@ -36,3 +36,4 @@
 * [28. Thread Level Parallelism](28.-thread-level-parallelism.md)
 * [29. OpenMP, Sharing lssues](29.-openmp-sharing-lssues.md)
 * [30. Cache Conherence, Performance](30.-cache-conherence-performance.md)
+* [32. Distributed Computing and MapReduce](32.-distributed-computing-and-mapreduce.md)
