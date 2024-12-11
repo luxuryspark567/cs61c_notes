@@ -1,0 +1,85 @@
+# Dependability (Parity, ECC, & RAID)
+
+## Speedup Issues : Amdahl’s Law
+
+Applications can almost never be completely parallelized; some serial code remains
+
+<figure><img src=".gitbook/assets/image.png" alt="" width="375"><figcaption></figcaption></figure>
+
+Amdahl's law: (s is serial % of program, C is number of cores)
+
+$$
+Speedup(C) = \frac{Time(1)}{Time(C)} \leq \frac{1}{s+\frac{1-s}{C}} \leq \frac{1}{s} \qquad C\to \infty
+$$
+
+<mark style="color:yellow;">Even if the parallel portion of your application speeds up perfectly, performance is limited by the serial portion</mark>.
+
+## Hamming distance
+
+Difference in number of bits
+
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+## Parity: Simple Error-Detection Coding
+
+* Coding: Each data value, before it is written to memory is “tagged” with an extra bit to force the stored word to have even parity, via XOR
+* Checking: Each word, as it is read from memory is “checked” by finding its parity (including the parity bit).
+
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+A non-zero parity check indicates an error occurred: Just odd numbers of errors are detected.
+
+## Hamming ECC (Hamming Error Correction Code)
+
+* Detection: bit pattern fails codeword check&#x20;
+* Correction: map to nearest valid code word
+
+
+
+## Interleave data and parity bits&#x20;
+
+* Place parity bits at binary positions 1, 10, 100, etc .&#x20;
+  * p1 covers all positions with LSB = 1&#x20;
+  * p2 covers all positions with next to LSB = 1, etc
+
+<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+## Encoding Example
+
+A byte of data: 1 001 1010
+
+<figure><img src=".gitbook/assets/image (4).png" alt="" width="375"><figcaption></figcaption></figure>
+
+Final code word: <mark style="color:green;">01</mark>1<mark style="color:green;">1</mark>001<mark style="color:green;">0</mark>1010
+
+## Decoding Example
+
+Suppose receive <mark style="color:green;">01</mark>1<mark style="color:green;">1</mark>001<mark style="color:green;">0</mark>1110
+
+<figure><img src=".gitbook/assets/image (5).png" alt="" width="375"><figcaption></figcaption></figure>
+
+Flip the incorrect bit … 011100101<mark style="color:red;">0</mark>10
+
+## What if More Than 2-Bit Errors?
+
+* Use <mark style="color:red;">double-error correction</mark>, triple-error detection (DECTED)&#x20;
+* Network transmissions, disks, distributed storage common failure mode is <mark style="color:red;">bursts of bit errors</mark>, not just one or two bit errors&#x20;
+  * Contiguous sequence of B bits in which first, last and any number of intermediate bits are in error&#x20;
+  * Caused by impulse noise or by fading in wireless Effect is greater at higher data rates&#x20;
+* Solve with <mark style="color:yellow;">Cyclic Redundancy Check (CRC)</mark>, <mark style="color:yellow;">interleaving</mark> or other more advanced codes
+
+## RAID
+
+* RAID 0: Stripe data across 2+ disks No redundancy, disk failure = lost data!&#x20;
+* RAID 1: Mirror the disk&#x20;
+* RAID 4: Parity disk block-level striping (one specific disk will tend to)
+* RAID 5: Block-level striping, but <mark style="color:red;">distribute the parity across all disks</mark>
+* RAID 6: Have another parity block, and also distribute parity across all disks&#x20;
+  * Can support two concurrent disk failures
+
+<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+
+
+
+
