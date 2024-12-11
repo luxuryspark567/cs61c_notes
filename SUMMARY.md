@@ -41,4 +41,4 @@
 * [34. VM II  Page Faults, Multileve, Interrupts Exceptions](34.-vm-ii-page-faults-multileve-interrupts-exceptions.md)
 * [34. VM II TLB](34.-vm-ii-tlb.md)
 * [34. VM II Performance](34.-vm-ii-performance.md)
-* [Dependability (Parity, ECC, & RAID)](dependability-parity-ecc-and-raid.md)
+* [38. Dependability (Parity, ECC, & RAID)](38.-dependability-parity-ecc-and-raid.md)
