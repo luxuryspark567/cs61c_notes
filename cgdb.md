@@ -2,49 +2,12 @@
 
 ## Debug
 
-**1, compile**
-
-```
-gcc -g -o pwd_checker test_pwd_checker.c pwd_checker.c
-```
-
-**2, start cgdb**
-
-```
-cgdb pwd_checker
-```
-
-**3, start debuging**
-
-"start"
-
-**4, switch to code**
-
-"ESC"
-
-**5, switch CML**
-
-"i"
-
-6, exit
-
-"q"
-
-## Tips
-
-### How do I switch between the code window and the console? <a href="#how-do-i-switch-between-the-code-window-and-the-console" id="how-do-i-switch-between-the-code-window-and-the-console"></a>
-
-CGDB presents a vim-like navigation interface: Press `i` on your keyboard to switch from the code window to the console. Press `Esc` to switch from the console to the code window.
-
-GDB presents a readline/emacs-like navigation interface: Press `Ctrl + X` then `O` to switch between windows.
-
-### I'm stuck in the code window <a href="#i-m-stuck-in-the-code-window" id="i-m-stuck-in-the-code-window"></a>
-
-Press `i` on your keyboard. This should get you back to the console.
-
-### The text UI is garbled <a href="#the-text-ui-is-garbled" id="the-text-ui-is-garbled"></a>
-
-Refresh the GDB text UI by pressing `Ctrl + l`.
+* **compile:**  `gcc -g -o pwd_checker test_pwd_checker.c pwd_checker.c`
+* **start cgdb:**  `cgdb pwd_checker`
+* **start debuging:** "start"
+* **switch to code:** "ESC"
+* **switch to CML:** "i"
+* exit: "q"
 
 ## CGDB 安装（Windows）
 

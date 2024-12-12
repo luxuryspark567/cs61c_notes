@@ -2,12 +2,12 @@
 
 ## Compile
 
-*   Compile 1 file to 1 exe file, using the `-g` flag in case we need to debug this program in the future.
+*   Compile 1 file to 1 exe file, using the <mark style="color:yellow;">`-g`</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">flag</mark> in case we need to <mark style="color:yellow;">debug this program</mark> in the future.
 
     ```bash
     gcc -g -o ex5_segfault ex5_segfault.c
     ```
-*   Compile 2 files to 1 exe file.\
+*   <mark style="color:yellow;">Compile 2 files to 1 exe file</mark>.\
 
 
     ```bash
