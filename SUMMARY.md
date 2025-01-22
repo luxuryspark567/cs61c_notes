@@ -1,7 +1,7 @@
 # Table of contents
 
 * [环境准备](README.md)
-* [Mac安装docker](lima-docker-ubuntu.md)
+* [Mac安装docker运行GDB](mac-an-zhuang-docker-yun-xing-gdb.md)
 * [GCC](gcc.md)
 * [GDB](gdb.md)
 * [CGDB](cgdb.md)
