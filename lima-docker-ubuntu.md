@@ -1,7 +1,3 @@
----
-description: docker
----
-
 # Mac安装docker
 
 ## 一、Docker安装
