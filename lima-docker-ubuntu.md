@@ -103,6 +103,6 @@ $ apt install cgdb
 
 ## 四、重新启动并且进入container
 
-luxu@Roberts-MacBook \~ % `docker start -a -i modest_colden`
+`$ docker start -a -i modest_colden`
 
 root@4ff78b092733:/#&#x20;
