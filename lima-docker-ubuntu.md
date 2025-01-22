@@ -52,7 +52,7 @@ docker run hello-world
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-5, 新增 ubuntu 容器
+## 5, 新增 ubuntu 容器
 
 从ubuntu官网找到最新的ubuntu版本，20250122为24.10版本。
 
@@ -82,6 +82,10 @@ $ docker start ubuntu-container
 # 进行该容器的终端
 $ docker exec -it ubuntu-container bash
 ```
+
+## 新增映射到Mac本地文件夹的container，方便文件共享
+
+docker run -it -v /Users/luxu/Documents/lima\_vm:/home/lima\_vm ubuntu:24.10
 
 ## 删除container
 
