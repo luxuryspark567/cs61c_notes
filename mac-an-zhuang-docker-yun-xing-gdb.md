@@ -38,7 +38,7 @@ $ limactl stop docker
 （5）启动VM
 
 ```
-$ limactl s docker
+$ limactl start docker
 ```
 
 （6）刪除 VM
