@@ -1,6 +1,7 @@
 # Table of contents
 
 * [环境准备](README.md)
+* [lima-docker-ubuntu](lima-docker-ubuntu.md)
 * [GCC](gcc.md)
 * [GDB](gdb.md)
 * [CGDB](cgdb.md)
