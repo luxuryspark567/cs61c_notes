@@ -1,4 +1,4 @@
-# Mac安装docker
+# Mac安装docker运行GDB
 
 ## 一、Docker安装
 
@@ -35,7 +35,13 @@ $ limactl shell docker docker ps
 $ limactl stop docker
 ```
 
-（5）刪除 VM
+（5）启动VM
+
+```
+$ limactl s docker
+```
+
+（6）刪除 VM
 
 ```
 $ limactl delete docker
