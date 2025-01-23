@@ -128,7 +128,30 @@ $ apt install cgdb
 
 ## 四、重新启动并且进入container
 
+1，首先尝试重新进入，如果输入命令后卡住了，需要用第2步重启docker和container。
+
 ```
 $ docker start -a -i modest_colden
 root@4ff78b092733:/# 
 ```
+
+2，重启Docker和Container
+
+{% code overflow="wrap" %}
+```
+$ limactl list
+NAME      STATUS     SSH                CPUS    MEMORY    DISK      DIR
+docker    Running    127.0.0.1:57719    4       4GiB      100GiB    ~/.lima/docker
+$ limactl stop docker
+
+$ limactl start docker
+
+$ docker ps -a
+CONTAINER ID   IMAGE          COMMAND       CREATED        STATUS                       PORTS     NAMES
+4ff78b092733   ubuntu:24.10   "/bin/bash"   21 hours ago   Exited (255) 3 minutes ago             modest_colden
+
+$ docker start -a -i modest_colden
+
+root@4ff78b092733:/# 
+```
+{% endcode %}
