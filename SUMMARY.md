@@ -17,8 +17,6 @@
 * [10. RISC-V Assembly](10.-risc-v-assembly.md)
 * [11. RV32 Machine Language](11.-rv32-machine-language.md)
 * [13. CALL(Compiling, Assembling, Linking, and Loading)](13.-call-compiling-assembling-linking-and-loading.md)
-* [Calling Convention](calling-convention.md)
-* [Neural Net](neural-net.md)
 * [14. Synchronous Digital Systems (SDS):](14.-sds.md)
 * [15. Combinational Logic](15.-combinational-logic.md)
 * [16. State](16.-state.md)
