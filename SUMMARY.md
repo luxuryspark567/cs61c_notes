@@ -10,6 +10,7 @@
 * [1. Numbers Representation](1.-numbers-representation.md)
 * [2. Intro](2.-intro.md)
 * [3. Points, Arrays and Strings](3.-points-arrays-and-strings.md)
+* [3.1 Some Tricks](3.1-some-tricks.md)
 * [4. Memory Management](4.-memory-management.md)
 * [5. Generics Function Pointers](5.-generics-function-pointers.md)
 * [6. Float](6.-float.md)
