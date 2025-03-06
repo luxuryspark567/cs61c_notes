@@ -1,12 +1,12 @@
 # GFLOPS & MIPS
 
-* <mark style="color:yellow;">**Use GFLOPS**</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">when evaluating systems that are heavily dependent on</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">**floating-point operations**</mark><mark style="color:yellow;">, like scientific computing, AI, or graphics</mark>.
-* <mark style="color:yellow;">**Use MIPS**</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">for general-purpose processors, especially in embedded systems and microcontrollers that perform fixed-point or integer-heavy tasks.</mark>
-* <mark style="color:yellow;">**For fixed-point MCUs**</mark><mark style="color:yellow;">,</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">**MIPS**</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">or other embedded-specific benchmarks</mark> (like <mark style="color:yellow;">**Dhrystone**</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">or</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">**CoreMark**</mark>) are more appropriate than GFLOPS.
+* <mark style="color:yellow;">**Use**</mark>**&#x20;**<mark style="color:red;">**GFLOPS**</mark> <mark style="color:yellow;">when evaluating systems that are heavily dependent on</mark> <mark style="color:red;">**floating-point operations**</mark><mark style="color:yellow;">, like scientific computing, AI, or graphics</mark>.
+* <mark style="color:yellow;">**Use**</mark>**&#x20;**<mark style="color:red;">**MIPS**</mark> <mark style="color:yellow;">for general-purpose processors, especially in embedded systems and microcontrollers that perform</mark> <mark style="color:red;">fixed-point or integer-heavy</mark> <mark style="color:yellow;">tasks.</mark>
+* <mark style="color:yellow;">**For**</mark>**&#x20;fixed-point&#x20;**<mark style="color:red;">**MCUs**</mark><mark style="color:red;">,</mark> <mark style="color:red;"></mark><mark style="color:red;">**MIPS**</mark> <mark style="color:yellow;">or other embedded-specific benchmarks</mark> (like <mark style="color:yellow;">**Dhrystone**</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">or</mark> <mark style="color:yellow;"></mark><mark style="color:yellow;">**CoreMark**</mark>) are more appropriate than GFLOPS.
 
 ## MIPS
 
-**MIPS** (Million Instructions Per Second) 是衡量 CPU 性能的一种指标，表示处理器每秒能够执行的指令数量（以百万为单位）。MIPS 主要用于表示 CPU 执行指令的速度，但它不考虑指令的复杂性或内存访问延迟。
+**MIPS** (Million Instructions Per Second) 是衡量 CPU 性能的一种指标，表示<mark style="color:red;">处理器每秒能够执行的指令数量（以百万为单位）</mark>。MIPS 主要用于表示 CPU 执行指令的速度，但它不考虑指令的复杂性或内存访问延迟。
 
 #### **MIPS 计算公式**：
 
@@ -58,10 +58,10 @@ $$
 
 To calculate the theoretical **GFLOPS** (Giga Floating Point Operations per Second) of a CPU, you need to consider the following key factors:
 
-1. **Clock Speed (in GHz)**: The number of cycles the CPU executes per second.
-2. **Number of Cores**: The total number of processing units (cores) in the CPU.
-3. **Instructions Per Cycle (IPC)**: The number of instructions the CPU can execute per clock cycle. For floating-point operations, you specifically need to know how many floating-point operations each core can perform per cycle.
-4. **Floating Point Operations Per Instruction (FLOP per Instruction)**: How many floating-point operations each instruction executes. This typically depends on the CPU's architecture (e.g., scalar, superscalar, SIMD).
+1. <mark style="color:red;">**Clock Speed (in GHz)**</mark>: The number of cycles the CPU executes per second.
+2. <mark style="color:red;">**Number of Cores**</mark>: The total number of processing units (cores) in the CPU.
+3. <mark style="color:red;">**Instructions Per Cycle (IPC)**</mark>: The number of instructions the CPU can execute per clock cycle. For floating-point operations, you specifically need to know how many floating-point operations each core can perform per cycle.
+4. <mark style="color:red;">**Floating Point Operations Per Instruction (FLOP per Instruction)**</mark>: How many floating-point operations each instruction executes. This typically depends on the CPU's architecture (e.g., scalar, superscalar, SIMD).
 
 #### Formula for Theoretical GFLOPS
 
@@ -69,14 +69,12 @@ $$
 Theoretical \, GFLOPS=Number \, of \, Cores \times Clock\,Speed(GHz) \times IPC \times FLOP \, per \, Instruction
 $$
 
-
-
 #### Steps:
 
-1. **Clock Speed**: Typically given in GHz (gigahertz), which is 10910^9109 cycles per second.
+1. **Clock Speed**: Typically given in GHz (gigahertz), which is $$10^9$$ cycles per second.
 2. **Number of Cores**: The number of physical cores in the CPU. For multi-core processors, this is usually specified (e.g., a 4-core or 8-core processor).
-3. **IPC (Instructions Per Cycle)**: This value is highly dependent on the CPU's architecture. Modern CPUs can execute multiple instructions per cycle, and this number may vary under different workloads. For simplicity, you can assume the typical value based on the CPU's architecture or consult the manufacturer specifications.
-4. **FLOP per Instruction**: The number of floating-point operations executed per instruction. For example, some architectures might execute one or more floating-point operations (like adding or multiplying multiple floating-point numbers in one instruction). For a simple case, you might assume **1 FLOP per instruction**, but it could be higher in vectorized operations (like SIMD) or specialized floating-point units.
+3. **IPC (Instructions Per Cycle)**: This value is highly dependent on <mark style="color:red;">the CPU's architecture</mark>. <mark style="color:red;">Modern CPUs can execute multiple instructions per cycle</mark>, and this number may vary under different workloads. For simplicity, you can assume the typical value based on the CPU's architecture or <mark style="color:red;">consult the manufacturer specifications</mark>.
+4. **FLOP per Instruction**: The number of floating-point operations executed per instruction. For example, <mark style="color:red;">some architectures might execute one or more floating-point operations</mark> (like adding or multiplying multiple floating-point numbers in one instruction). For a simple case, <mark style="color:red;">you might assume</mark> <mark style="color:red;"></mark><mark style="color:red;">**1 FLOP per instruction**</mark>, but it could be higher in vectorized operations (like SIMD) or specialized floating-point units.
 
 #### Example Calculation:
 
