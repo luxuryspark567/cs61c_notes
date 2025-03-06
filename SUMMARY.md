@@ -28,7 +28,7 @@
 * [21. Pipeline1](21.-pipeline1.md)
 * [22. Pipeline2](22.-pipeline2.md)
 * [23. Caches](23.-caches.md)
-* [24&25. Direct Mapped Caches](24-and-25.-direct-mapped-caches.md)
+* [24 & 25. Direct Mapped Caches](24-and-25.-direct-mapped-caches.md)
 * [26. Set-Associative Caches](26.-set-associative-caches.md)
 * [27. Parallelism](27.-parallelism.md)
 * [GFLOPS & MIPS](gflops-and-mips.md)
