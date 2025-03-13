@@ -35,7 +35,7 @@
 * [28. Thread Level Parallelism](28.-thread-level-parallelism.md)
 * [29. OpenMP, Sharing lssues](29.-openmp-sharing-lssues.md)
 * [30. Cache Conherence, Performance](30.-cache-conherence-performance.md)
-* [32. Distributed Computing and MapReduce](32.-distributed-computing-and-mapreduce.md)
+* [32. Distributed Computing and MapReduce (???)](32.-distributed-computing-and-mapreduce.md)
 * [33. VM I Intro](33.-vm-i-intro.md)
 * [34. VM II  Page Faults, Multileve, Interrupts Exceptions](34.-vm-ii-page-faults-multileve-interrupts-exceptions.md)
 * [34. VM II TLB](34.-vm-ii-tlb.md)
